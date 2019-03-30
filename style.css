@@ -3,24 +3,26 @@ body, html{
     font-family: 'Open Sans', sans-serif;
     padding: 0;
     margin: 0;
-    height: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
 }
 :root{
     --width: 980px;
 }
-
-/* ! Style for HEADER */
+/*TODO Style for HEADER */
 .header *{
     text-transform: uppercase;
     text-decoration: none;
 }
 .header-mini{
-    font-size: 75%;
     width: var(--width);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    height: 26px;
 }
 .header-mini ul{
     display: flex;
@@ -30,14 +32,16 @@ body, html{
 .header-mini *{
     display: inline-block;
     color: gray;
-    margin-left: 10px; 
+    margin-left: 10px;
+    font-size: 95%;
+    font-weight: 800px;
 }
 #VNese, #EN{ 
     color: white;
     box-shadow: 0 0 0 0 black;
     width: 40px;
     text-align: center;
-    line-height: 25px;
+    line-height: 22px;
 }
 #VNese{
     background: rgb(235, 40, 40);
@@ -49,7 +53,6 @@ body, html{
     margin-left: 0;
 }
 
-
 .header-main{
     background: url(assets/bg-top.png);
     background-repeat: repeat-x;
@@ -57,6 +60,8 @@ body, html{
     display: flex;
     justify-content: space-between;
 }
+
+/*TODO  Phần main kèm logo */
 .menu-header{
     width: var(--width);
     margin: 0 auto;
@@ -65,17 +70,20 @@ body, html{
     align-items: center;
     justify-content: space-between;
 }
-.menu-header ul{
+.menu-header > ul{
     display: flex;
     flex-direction: row;
 }
 .menu-header li{
     color: rgb(20, 20, 20);
     font-weight: 700;
-    font-size: 90%;
+    font-size: 95%;
     display : flex;
-    margin: 20px;
+    margin-right: 40px;
     align-items: flex-end;
+}
+.parent > li{
+    padding-bottom: 20px;    
 }
 .menu-header a{
     color: rgb(37, 37, 37);
@@ -84,7 +92,7 @@ body, html{
 .quick-choose{
     display: flex;
     flex-direction: column-reverse;
-    margin-left: 20px;
+    margin: 0px 0px 10px 20px;
 }
 .tin-tuc{
     align-content: center;
@@ -109,8 +117,61 @@ body, html{
     margin-left: 20px;
     justify-content: flex-start;
 }
-
-/* ! Style for 2 FIXED BANNER */
+.parent{
+    position: relative;
+}
+/**  Các menu nhỏ hiện lên khi hover vào menu trên */
+.child-menu{
+    box-shadow: 0px 0px 0px 5px rgba(32, 32, 32, 1);
+    background: rgb(32, 32, 32);
+    margin: 0;
+    padding: 20px 0px 20px 10px;
+    border: 2px solid gray;
+    flex-direction: row;
+    position: absolute;
+    display: none;
+}
+.child-menu li{
+    display: block;
+    margin-bottom: 20px;
+}
+.child-menu li:last-child{
+    margin-bottom: 0px;
+}
+.child-menu a{
+    display: block;
+    color: white;
+    text-transform: none;
+}
+.hover-effect:hover{
+    cursor: pointer;
+}
+#mini-menu1:hover #child-menu1{
+    top : 70px;
+    left: 150px;
+    display: block;
+    z-index: 999;
+}
+#mini-menu2:hover #child-menu2{
+    top : 70px;
+    left: 250px;
+    display: block;
+}
+#mini-menu3:hover #child-menu3{
+    top : 70px;
+    left: 350px;
+    display: block;
+}
+#mini-menu4:hover #child-menu4{
+    top : 70px;
+    left: 450px;
+    display: block;
+}
+.hover-red:hover{
+    color: rgb(253, 123, 123);
+    transition: 0.2s;
+}
+/*TODO  Style for 2 FIXED BANNER */
 .banner{
     position: relative;
 }
@@ -120,6 +181,7 @@ body, html{
 .banner-left{
     top: 20px;
     left: 10px;
+    z-index: 100;
 }
 .banner-right{
     background: url(assets/bg-banner.PNG) no-repeat;
@@ -128,6 +190,7 @@ body, html{
     top: 20px;
     right: 10px;
     height: 600px;
+    z-index: 100;
 }
 .banner-right a{
     width: 120px;
@@ -138,23 +201,33 @@ body, html{
 .banner-right a:first-child{
     margin-top: 100px;
 }
+.child-abs{
+    position: absolute;
+}
 
 
-/*! Style for CONTAINER */
+/*TODO Style for CONTAINER */
+
+/** WIDGET */
 .widget{
     margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: var(--width);
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
 }
 .widget *{
     display: inline-block;
+    /* line-height: 10px; */
 }
-.widget a{
+.widget li{
+    padding: 0;
+    margin: 0;
+    /*? Question here : Rộng 980px , chia 7 phần mỗi phần 140px nhưng vẫn bị tràn xuống ? */
+    width: 135px;
     height: 90px;
-    width: 139px;
     border-right: 1px solid black;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    line-height: 10px;
 }
 #widget-1{
     background: url(assets/widget.png) 0px 0px;
@@ -173,13 +246,258 @@ body, html{
 }
 
 #widget-5{
-    background: url(assets/widget.png) 535px 0px;
+    background: url(assets/widget.png) 537px 0px;
 }
 
 #widget-6{
-    background: url(assets/widget.png) 683px 0px;
+    background: url(assets/widget.png) 678px 0px;
 }
 #widget-7{
     background: url(assets/widget.png) 814px 0px;
     border-right: none;  
+}
+.widget-full{
+    height: 90px;
+    width: 135px;
+}
+.widget::after{
+    content: '';
+    display: block;
+    width: var(--width);
+    height: 1px;
+    background: black;
+}
+
+/*TODO SLIDE main đầu tiên */
+.slide{
+    margin-top: 20px;
+    height: 450px;
+    background: url(assets/bg_c_bricks.png) repeat-x;
+    display: flex;
+    justify-content: center;
+}
+.menu-ne{
+    display: block;
+    margin: 0 auto;
+    width: var(--width);
+    transform: translateX(-980px);
+}
+.slide-container{
+    width: var(--width);
+    height: 450px;
+    display: flex;
+}
+.slide-quang-cao{
+    width: var(--width);
+    height: 450px;
+    overflow: hidden;
+}
+.slide-container li{
+    display: inline;
+    width: var(--width);
+    height: 450px;
+}
+
+.slide-quang-cao button{
+    display: inline;
+    background: none;
+    border: none;
+    opacity: 0.5;
+    overflow: hidden;
+}
+button.next{
+    top: 200px;
+    right: 20px;
+}
+button.prev{
+    top: 200px;
+    left: 20px;
+
+}
+.slide-quang-cao button:focus{
+    outline: none;
+}
+.slide-quang-cao button:hover{
+    opacity: 1;
+    transition: 0.3s; 
+}
+.next:hover #next-slide{
+    color: white !important;
+}
+.prev:hover #prev-slide{
+    color: white !important;
+}
+/* * MOVIE SELECTOR VÀ EVENT */
+.home-movie-selector{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.home-title{
+    background: url(assets/bg_h3_line.jpg) repeat-x center center;
+    display: flex;
+    justify-content: center;
+    width: var(--width);
+}
+/*TODO SLIDE CHOOSE MOVIE */
+.container-movie{
+    display: flex;
+    justify-content: center;
+}
+.poster-movie{
+    display: inline;
+}
+.menu-movie{
+    display: flex;
+    justify-content: center;
+    width: var(--width);
+    overflow: hidden;
+}
+.slide-movie{
+    margin: 0;
+    width: var(--width);
+    display: flex;
+    justify-content: space-between;
+    height: 360px;
+}
+.slide-movie li{
+    display: block;
+    width: 240px;
+    margin-right: 6px;
+}
+.rating-P{
+    background: url(assets/bg-movie-rating.png) 2px 2px;
+    width: 48px;
+    height: 33px;
+    bottom: 320px;
+    left: 10px;
+}
+.rating-16{
+    background: url(assets/bg-movie-rating.png) 97px 2px;
+    width: 48px;
+    height: 33px;
+    bottom: 320px;
+    left: 10px;
+}
+.rating-18{
+    background: url(assets/bg-movie-rating.png) 144px 2px;
+    width: 48px;
+    height: 33px;
+    bottom: 320px;
+    left: 10px;
+}
+.rating-13{
+    background: url(assets/bg-movie-rating.png) 50px 2px;
+    width: 48px;
+    height: 33px;
+    bottom: 320px;
+    left: 10px;
+}
+
+.infor-buyticket{
+    background: url(assets/bg-transparent-grey.png);
+    width: 240px;
+    height: 355px;
+    top: 0px;
+    left: 0px;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-size: 85%;
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+}
+.infor-movie{
+    padding: 10px;
+    background: rgba(0, 0 , 0, 0.7);
+}
+.name-movie{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.gr-button{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+.xem-chi-tiet{
+    background: red;
+    border-radius: 2px;
+    padding: 5px 8px 5px 8px;
+    text-decoration: none;
+    color: white;
+}
+.buy-ticket{
+    background: red;
+    border-radius: 2px;
+    padding: 5px 8px 5px 8px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+.icon-call{
+    background: url(assets/sprite_icon.png) 102px 349px;
+    height: 17px;
+    width: 24px;
+    margin-right: 10px;
+}
+#movie-1{
+    display: none;
+}
+#poster-movie-1:hover #movie-1{
+    display: flex !important;
+}
+
+#movie-2{
+    display: none;
+}
+#poster-movie-2:hover #movie-2{
+    display: flex !important;
+}
+#movie-3{
+    display: none;
+}
+#poster-movie-3:hover #movie-3{
+    display: flex !important;
+}
+#movie-4{
+    display: none;
+}
+#poster-movie-4:hover #movie-4{
+    display: flex !important;
+}
+#movie-5{
+    display: none;
+}
+#poster-movie-5:hover #movie-5{
+    display: flex !important;
+}
+#movie-6{
+    display: none;
+}
+#poster-movie-6:hover #movie-6{
+    display: flex !important;
+}
+#movie-7{
+    display: none;
+}
+#poster-movie-7:hover #movie-7{
+    display: flex !important;
+}
+#prev-movie{
+    background: url(assets/arow-movie-selection.png) 34px 0;
+    width: 33px;
+    height: 64px;
+    top : 141px;
+    left: -34px;
+}
+#next-movie{
+    background: url(assets/arow-movie-selection.png) 0px 0px;
+    width: 33px;
+    height: 64px;
+    top : 141px;
+    right: -33px;
 }
