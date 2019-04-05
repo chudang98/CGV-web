@@ -260,8 +260,8 @@
                             </li>
                     </ul>
                 </div>
-                <div  id="next-movie" class="child-abs" onclick="next_movie()"></div>
-                <div  id="prev-movie" class="child-abs" onclick="prev_movie()"></div>
+                <div  id="next-movie" class="child-abs next" onclick="next_movie()"></div>
+                <div  id="prev-movie" class="child-abs prev" onclick="prev_movie()"></div>
             </div>           
         </div>
 
@@ -270,93 +270,99 @@
                 <img src="assets/h3_event.gif" alt="">
             </div>
         </div>
-        
+
+        <div class="quang-cao">
+            <!-- <div class="demo">
+                    <ul class="toggle-tabs">
+                            <li id="ribon-left"><span>tức & Ưu đãi</span></li>
+                            <li id= "ribon-right"><span>Thành viên CGV</span></li>
+                    </ul>
+            </div> -->
+            <div class="parent">
+                <div class="content-quang-cao">
+                    <ul class="abv-content">
+                        <li><img src="assets/captainmarvel_combo_240x201.jpg" alt=""></li>
+                        <li><img src="assets/web_240x201_13.jpg" alt=""></li>
+                        <li><img src="assets/gudetama2_240-x-201.jpg" alt=""></li>
+                        <li><img src="assets/sjora_240x201.jpg" alt=""></li>
+                        <li><img src="assets/waffle_240-x-201.jpg" alt=""></li>
+                    </ul>
+                    <div id="prev-adv" class="child-abs prev" onclick="prev_abv()"></div>
+                    <div id="next-adv" class="child-abs next" onclick="next_abv()"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <p style="
-        background:  url(assets/bg-movie-rating.png) 50px 2px;
-        height : 33px;
-        width: 48px;
-    "></p>
-    <script>
-        var t = 1;
-        const objCha =  document.querySelector('.menu-ne');
-        const objCon = document.querySelectorAll('.menu-ne li');
-        console.log(objCon);
-        
-        function next(){
-            if(t >= objCon.length - 1) return;
-            objCha.style.transition = "transform 0.4s";
-            t++;
-            objCha.style.transform = 'translateX(' + (-t * 980) + 'px)';
 
-                /* ! không làm được như này vì không đồng nhất được đơn vị*/ 
-            // var kc = document.querySelector('.slide-container').style.marginLeft;
-            // kc = kc + 980;
-            // document.querySelector('.slide-container').style.marginLeft = kc + "px";
-        }
+    <div class="ticket-couples">
+        <div class="content-ticket">
+                <a href="#">
+                        <img src="assets/phototicket---496x247_1.jpg" alt="">
+                </a>
+        </div> 
+    </div>
 
-        // console.log(objCha);
+    <!-- TODO : FOOTER -->
 
-        const actionPrev = document.querySelector('#prev-slide');
-        actionPrev.addEventListener('click', ()=>{
-            if(t <= 0) return;
-            objCha.style.transition = "transform 0.4s";
-            t--;
-            objCha.style.transform = 'translateX(' + (-t * 980) + 'px)';
-        });
+    <div class="footer-content">
+        <div class="footer-brand-slide">
+            <ul class="list-brand-film">
+                <li><a id="brand-1" href="#"></a></li>
+                <li><a id="brand-2" href="#"></a></li>
+                <li><a id="brand-3" href="#"></a></li>
+                <li><a id="brand-4" href="#"></a></li>
+                <li><a id="brand-5" href="#"></a></li>
+                <li><a id="brand-6" href="#"></a></li>
+                <li><a id="brand-7" href="#"></a></li>
+                <li><a id="brand-8" href="#"></a></li>
+            </ul>
+        </div>
+        <div class="footer-main">
+            <div class="footer-main-content">
+                <div class="cgv-vietnam">
+                    <h3>CGV Việt Nam</h3>
+                    <ul>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li><a href="#">Tiện ích Online</a></li>
+                        <li><a href="#">Thẻ Quà Tặng</a></li>
+                        <li><a href="#">Tuyển Dụng</a></li>
+                        <li><a href="#">Liên Hệ Quảng Cáo CGV</a></li>
+                    </ul>
+                </div>
+                <div class="cgv-policy">
+                    <h3>Điều khoản sử dụng</h3>
+                    <ul>
+                        <li><a href="#"><p>Điều khoản chung</p></a></li>                        
+                        <li><a href="#">Điều khoản giao dịch</a></li>                        
+                        <li><a href="#">Chính sách thanh toán</a></li>                        
+                        <li><a href="#">Chính sách bảo mật</a></li>                        
+                        <li><a href="#">Câu hỏi thường gặp</a></li>                        
+                    </ul>
+                </div>
+                <div class="cgv-follow-us">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <div class="icon-follow">
+                        <ul>
+                            <li><a class="zoom-icon" id="fb" href="#"></a></li>
+                            <li><a class="zoom-icon" id="youtube" href="#" ></a></li>
+                            <li><a class="zoom-icon" id="line" href="#"></a></li>
+                            <li><a class="zoom-icon" id="insta" href="#"></a></li>
+                            <li><a class="zoom-icon" id="zalo" href="#"></a></li>
+                        </ul>
+                    </div>
+                    <a href="#"><img src="assets/cong-thuong.PNG" alt=""></a>
+                </div>
+                <div class="customer-cgv">
+                    <h3>Chăm sóc khách hàng</h3>
+                    <p>Hotline: 1900 6017</br>
+                    Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết )</p>
+                    <p>Email hỗ trợ : <a href="#">hoidap@cgv.vn</a></p>
+                    </div>
+            </div>
+        </div>
 
-        objCha.addEventListener('transitionend', ()=>{
-            if(objCon[t].id === 'lastClone'){
-                console.log(t + " last");
-                objCha.style.transition = "none";
-                t = objCon.length - 2;
-                objCha.style.transform = 'translateX(' + (-t * 980) + 'px)';
-            }
-            if(objCon[t].id === 'firstClone'){
-                console.log(t + " first");
-                objCha.style.transition = "none";
-                t = objCon.length - t;
-                objCha.style.transform = 'translateX(' + (-t * 980) + 'px)';
-            }
-        });
-        
-        const spaceMovie = 246;
-        var dem = 1;
-        const movieCha = document.querySelector('.slide-movie');
-        const movieCon = document.querySelectorAll('.slide-movie li');
-
-        function next_movie(){
-            if(dem >= movieCon.length - 3){
-                return;
-            }
-            movieCha.style.transition = 'transform 1s';
-            dem++;
-            movieCha.style.transform = 'translateX(' + (-dem * 246) + 'px)';
-            console.log(dem);
-        }
-        movieCha.addEventListener('transitionend', ()=>{
-            if(dem >= 3)
-                document.querySelector('#next-movie').style.display = 'none';
-            else
-                document.querySelector('#next-movie').style.display = 'block';
-        });
-        function prev_movie(){
-            if(dem <= 1){
-                return;
-            }
-            movieCha.style.transition = 'transform 1s';
-            dem--;
-            movieCha.style.transform = 'translateX(' + (-dem * 246) + 'px)';
-        }
-        movieCha.addEventListener('transitionend', ()=>{
-            if(dem <= 1)
-                document.querySelector('#prev-movie').style.display = 'none';
-            else
-                document.querySelector('#prev-movie').style.display = 'block';
-        });
-
-    </script>
-
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
