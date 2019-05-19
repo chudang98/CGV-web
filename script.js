@@ -103,3 +103,40 @@
             document.querySelector('#next-adv').style.display = 'block';
             abvCha.style.transform = 'translateX(' + (-dem1 * spaceAbv) + 'px)';
         }
+        'use strict'
+        let CGV = angular.module('CGV', []);
+        CGV.controller('tablePhim', ['$scope', 
+            function($scope){
+                $scope.listMovie = [];
+                $scope.id = 0;
+                $scope.init = function(name, linkImg, rating){
+                    var t = {
+                        'name' : name,
+                        'id' : $scope.id,
+                        'img' : '\'' + linkImg + '\'',
+                        'rate' : rating,
+                    }   
+                    $scope.id++;
+                    return t;
+                }
+                $scope.addMovie = function(name, img, rating){
+                    var phim = {
+                        'name' : name,
+                        'id' : $scope.id,
+                        'img' : linkImg,
+                        'rate' : rating,
+                    }
+                    $scope.id++;
+                    $scope.listMovie.push(phim);
+                }
+                $scope.listMovie.push('Captain Marvel', 'assets/240_10_27.jpg', 'rating-P');
+                $scope.listMovie.push('Chị trợ lý của anh', 'assets/240_10_47.jpg', 'rating-P');
+                $scope.listMovie.push('Hai Phượng', 'assets/240_12_3.jpg', 'rating-P');
+                $scope.listMovie.push('Mật vụ thanh trừng', 'assets/240_14_19.jpg', 'rating-P');
+                $scope.listMovie.push('Công viên kỳ diệu', 'assets/240_12_6.jpg', 'rating-P');
+                $scope.listMovie.push('Yêu nhầm bạn thân', 'assets/240_10_27.jpg', 'rating-P');
+                $scope.listMovie.push('Hạnh phúc của mẹ', 'assets/240_10_27.jpg', 'rating-P');
+                for(let i in $scope.listMovie){
+                    console.log(i);
+                }
+        }]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en vn">
+<html lang="en vn" ng-app="CGV">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -130,8 +130,33 @@
 
         <div class="container-movie">
             <div class="justify-content-element parent">
-                <div class="menu-movie">
+                <div class="menu-movie" ng-controller="tablePhim">
+
                     <ul class="slide-movie">
+                        <li class="parent poster-movie" ng-repeat="item in listMovie">
+                                <div class="poster-movie parent hover-effect">
+                                        <div class="rating-P child-abs"></div>
+                                        <img src="{{item.img}}" alt="" class="poster-off-movie">
+                                    </div>
+                                <div class="infor-buyticket child-abs hover-effect movie-banner">
+                                    <div class="infor-movie">
+                                        <div class="name-movie">{{ item.name }}</div>
+                                        <div class="gr-button">
+                                            <a href="#" class="xem-chi-tiet">Xem chi tiết</a>
+                                            <a href="#" class="buy-ticket">
+                                                <span class="icon-call"></span>
+                                                Mua vé
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>                            
+                        </li>
+                    </ul>
+                    
+
+                    <!-- <ul class="slide-movie">
+
+
                             <li class="parent" id="poster-movie-1">
                                 <div class="poster-movie parent hover-effect">
                                     <div class="rating-P child-abs"></div>
@@ -257,7 +282,7 @@
                                             </div>
                                         </div>
                                     </div>
-                            </li>
+                            </li> -->
                     </ul>
                 </div>
                 <div  id="next-movie" class="child-abs next" onclick="next_movie()"></div>
@@ -362,7 +387,10 @@
         </div>
 
     </div>
+    <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>\
+
     <script src="script.js"></script>
+
 
 </body>
 </html>

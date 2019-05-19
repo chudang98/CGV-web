@@ -241,7 +241,6 @@ body, html{
 #widget-3{
     background: url(assets/widget.png) 256px 0px;
 }
-
 #widget-4{
     background: url(assets/widget.png) 400px 0px;
 }
@@ -486,6 +485,13 @@ button.prev{
     display: none;
 }
 #poster-movie-7:hover #movie-7{
+    display: flex !important;
+}
+
+.movie-banner{
+    display: none;
+}
+.poster-movie:hover .movie-banner{
     display: flex !important;
 }
 .prev{
